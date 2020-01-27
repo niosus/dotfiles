@@ -1,5 +1,6 @@
 #include <iostream>
 #include <map>
+#include <unordered_map>
 #include <string>
 #include <vector>
 
@@ -23,7 +24,7 @@ int LongestSeqBroot(const std::string &sequence) {
 }
 
 int LongestSeq(const std::string &sequence) {
-  std::map<char, int> char_position_buffer{};
+  std::unordered_map<char, int> char_position_buffer{};
   int current_start_idx{};
   int longest_seq_length{};
   for (int i = 0; i < sequence.length(); ++i) {
