@@ -14,11 +14,10 @@ public:
   UniquePtr(UniquePtr &&other) = default;
   UniquePtr &operator=(UniquePtr &&other) = default;
 
-  template <typename U, typename UDeleter = Deleter,
-            typename = std::enable_if<std::is_convertible<U *, T *>::value>>
+  template <typename U, typename UDeleter = Deleter>
   UniquePtr(UniquePtr<U, UDeleter> &&other) {
     managed_ptr_ = other.release();
-    deleter_ = UDeleter{};
+    deleter_ = std::forward<UDeleter>(other.get_deleter());
   }
 
   ~UniquePtr() {
@@ -28,6 +27,7 @@ public:
   }
 
   T *get() { return managed_ptr_; }
+  Deleter &get_deleter() noexcept { return deleter_; }
 
   void reset(T *ptr) {
     if (managed_ptr_) {
