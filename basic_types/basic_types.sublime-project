@@ -1,17 +1,28 @@
 {
-  "folders":
-  [
-    {
-      "path": "."
-    }
-  ],
-  "settings": {
-    "ecc_verbose": true,
-    "ecc_flags_sources": [
-        {
-            "file": "compile_commands.json",
-            "search_in": "$project_base_path/"
-        },
-    ],
-  }
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		}
+	],
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"ecc_flags_sources":
+		[
+			{
+				"file": "compile_commands.json",
+				"search_in": "$project_base_path/"
+			}
+		],
+		"ecc_verbose": true
+	}
 }
