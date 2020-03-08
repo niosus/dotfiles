@@ -100,3 +100,9 @@ temp/
 test/
 .antigen/
 /.antigen.zsh
+/.antigen_plugin_lastupdate
+/.antigen_system_lastupdate
+/.fzf.bash
+/.fzf.zsh
+/.fzf/
+/.pip/
