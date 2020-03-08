@@ -99,3 +99,4 @@ teaching/
 temp/
 test/
 .antigen/
+/.antigen.zsh
