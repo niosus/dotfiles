@@ -8,3 +8,6 @@ chsh -s /bin/zsh
 ```
 Close and reopen terminal to have `zsh` as default prompt.
 
+## Install fzf
+Follow the instructions here: https://github.com/junegunn/fzf#using-git
+
