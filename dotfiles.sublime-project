@@ -2,6 +2,19 @@
 	"folders":
 	[
 		{
+			"folder_exclude_patterns":
+			[
+				"*",
+			],
+			"file_include_patterns":
+			[
+				"README.md",
+				"*sublime-project",
+				".zshrc",
+				".bashrc",
+				".gitignore",
+				".profile",
+			],
 			"path": "."
 		}
 	]
